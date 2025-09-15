@@ -1,0 +1,20 @@
+{
+  "ignition": {
+    "version": "3.3.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "groups": [
+          "sudo",
+          "docker"
+        ],
+        "name": "core",
+        "passwordHash": "$y$j9T$I0Ma3.P76lgC7jD8eedm......................................................................",
+        "sshAuthorizedKeys": [
+          "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbml..........................................................................."
+        ]
+      }
+    ]
+  }
+}

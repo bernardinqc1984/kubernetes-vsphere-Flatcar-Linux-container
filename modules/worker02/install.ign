@@ -1,0 +1,47 @@
+{
+  "ignition": {
+    "version": "3.3.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "groups": [
+          "sudo",
+          "docker"
+        ],
+        "name": "core",
+        "passwordHash": "$y$j9T$I0Ma3.P76lgC7jD8eedm......................................................................",
+        "sshAuthorizedKeys": [
+          "ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbml..........................................................................."
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "path": "/etc/systemd/network/00-ens192.network",
+        "contents": {
+          "compression": "",
+          "source": "data:,%5BMatch%5D%0AName%3Dens192%0A%0A%5BNetwork%5D%0AAddress%3Dxx.xxx.xx.80%0AGateway%3Dxx.xxx.xx.1%0ADNS%3Dxx.xxx.x.xxx%0ADNS%3Dxx.xxx.x.xxx%0A"
+        }
+      },
+      {
+        "path": "/etc/hostname",
+        "contents": {
+          "compression": "",
+          "source": "data:,k8s-worker02"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/motd.d/pi.conf",
+        "contents": {
+          "compression": "",
+          "source": "data:,This%20machine%20is%20dedicated%20to%20computing%20kubernetes"
+        },
+        "mode": 420
+      }
+    ]
+  }
+}

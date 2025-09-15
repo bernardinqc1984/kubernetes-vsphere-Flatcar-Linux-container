@@ -1,0 +1,32 @@
+variant: flatcar
+version: 1.0.0
+passwd:
+  users:
+    - name: core
+      password_hash: $y$j9T$I0Ma3.P76lgC7jD8eedm......................................................................
+      groups: 
+        - sudo
+        - docker
+      ssh_authorized_keys: 
+        - ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbml...........................................................................
+  units:
+  - name: 00-ens192.network
+    contents: |
+      [Match]
+      Name=ens192
+
+      [Network]
+      Address=xxx.xxx.xxx.xx
+      Gateway=xx.xxx.xx.x
+      DNS=xx.xxx.x.xx
+      DNS=xx.xxx.x.xx
+storage:
+  files:
+    - path: /etc/hostname
+      filesystem: "root"
+      contents:
+        inline: k8s-master01
+    - path: /etc/motd.d/pi.conf
+      mode: 0644
+      contents:
+        inline: This machine is dedicated to computing kubernetes
